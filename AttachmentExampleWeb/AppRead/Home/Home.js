@@ -44,6 +44,7 @@ var serviceRequest;
 })();
 
 function testAttachments() {
+    showToast("testAttachments().");
     Office.context.mailbox.getCallbackTokenAsync(attachmentTokenCallback);
 };
 
