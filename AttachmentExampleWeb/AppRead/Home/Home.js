@@ -44,9 +44,9 @@ var serviceRequest;
 })();
 
 function testAttachments() {
-    showToast(">>>testAttachments().");
+    showToast(">>>attachmentTokenCallback().");
     Office.context.mailbox.getCallbackTokenAsync(attachmentTokenCallback);
-    showToast(">>Finished.");
+    showToast(attachmentTokenCallback);
 };
 
 function attachmentTokenCallback(asyncResult, userContext) {
