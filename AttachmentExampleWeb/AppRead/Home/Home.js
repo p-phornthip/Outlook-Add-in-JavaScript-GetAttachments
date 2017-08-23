@@ -44,18 +44,12 @@ var serviceRequest;
 })();
 
 function testAttachments() {
-    showToast(">>testAttachments().");
     Office.context.mailbox.getCallbackTokenAsync(attachmentTokenCallback);
-    showToast("Finished");
 };
 
 function attachmentTokenCallback(asyncResult, userContext) {
-    showToast(">>attachmentTokenCallback().");
     if (asyncResult.status == "succeeded") {
-        showToast(">>If.");
         serviceRequest.attachmentToken = asyncResult.value;
-        showToast("attachmentToken");
-        showToast(serviceRequest.attachmentToken);
         makeServiceRequest();
     }
     else {
@@ -64,13 +58,12 @@ function attachmentTokenCallback(asyncResult, userContext) {
 }
 
 function makeServiceRequest() {
-    showToast("makeServiceRequest()");
     var attachment;
     xhr = new XMLHttpRequest();
 
     // Update the URL to point to your service location.
     xhr.open("POST", "https://localhost:44320/api/AttachmentService", true);
-
+showToast(">>Pass localhost");
     xhr.setRequestHeader("Content-Type", "application/json; charset=utf-8");
     xhr.onreadystatechange = requestReadyStateChange;
 
@@ -92,7 +85,6 @@ function makeServiceRequest() {
 
 // Handles the response from the JSON web service.
 function requestReadyStateChange() {
-    showToast("requestReadyStateChange()");
     if (xhr.readyState == 4) {
         if (xhr.status == 200) {
             var response = JSON.parse(xhr.responseText);
