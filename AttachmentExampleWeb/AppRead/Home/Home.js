@@ -44,15 +44,18 @@ var serviceRequest;
 })();
 
 function testAttachments() {
-    showToast(">>>attachmentTokenCallback().");
+    showToast(">>testAttachments().");
     Office.context.mailbox.getCallbackTokenAsync(attachmentTokenCallback);
-    showToast(attachmentTokenCallback);
+    showToast("Finished");
 };
 
 function attachmentTokenCallback(asyncResult, userContext) {
+    showToast(">>attachmentTokenCallback().");
     if (asyncResult.status == "succeeded") {
-        showToast(">>attachmentTokenCallback>>If.");
+        showToast(">>If.");
         serviceRequest.attachmentToken = asyncResult.value;
+        showToast("attachmentToken");
+        showToast(serviceRequest.attachmentToken);
         makeServiceRequest();
     }
     else {
@@ -61,6 +64,7 @@ function attachmentTokenCallback(asyncResult, userContext) {
 }
 
 function makeServiceRequest() {
+    showToast("makeServiceRequest()");
     var attachment;
     xhr = new XMLHttpRequest();
 
@@ -88,6 +92,7 @@ function makeServiceRequest() {
 
 // Handles the response from the JSON web service.
 function requestReadyStateChange() {
+    showToast("requestReadyStateChange()");
     if (xhr.readyState == 4) {
         if (xhr.status == 200) {
             var response = JSON.parse(xhr.responseText);
