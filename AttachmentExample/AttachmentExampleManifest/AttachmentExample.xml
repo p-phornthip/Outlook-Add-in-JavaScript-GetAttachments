@@ -22,7 +22,7 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="/AttachmentExampleWeb/AppRead/Home/Home.html"/>
+        <SourceLocation DefaultValue="https://p-phornthip.github.io/Outlook-Add-in-JavaScript-GetAttachments/AttachmentExampleWeb/AppRead/Home/Home.html"/>
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
@@ -80,7 +80,7 @@
         <bt:Image id="green-icon-80" DefaultValue="https://appcommandicons.blob.core.windows.net/images/taskpane_80x.png" />
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="readTaskPaneUrl" DefaultValue="/AttachmentExampleWeb/AppRead/Home/Home.html" />
+        <bt:Url id="readTaskPaneUrl" DefaultValue="https://p-phornthip.github.io/Outlook-Add-in-JavaScript-GetAttachments/AttachmentExampleWeb/AppRead/Home/Home.html" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="groupLabel" DefaultValue="Outlook Add-in Sample" />
