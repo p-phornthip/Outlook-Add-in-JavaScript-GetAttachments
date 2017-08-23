@@ -60,7 +60,7 @@ function attachmentTokenCallback(asyncResult, userContext) {
 function makeServiceRequest() {
     var attachment;
     xhr = new XMLHttpRequest();
-
+showToast(">>Before localhost");
     // Update the URL to point to your service location.
     xhr.open("POST", "https://localhost:44320/api/AttachmentService", true);
 showToast(">>Pass localhost");
