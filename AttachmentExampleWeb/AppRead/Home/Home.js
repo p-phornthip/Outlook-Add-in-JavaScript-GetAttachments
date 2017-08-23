@@ -49,6 +49,7 @@ function testAttachments() {
 
 function attachmentTokenCallback(asyncResult, userContext) {
     if (asyncResult.status == "succeeded") {
+        showToast("asyncResult.status = succeeded !!");
         serviceRequest.attachmentToken = asyncResult.value;
         makeServiceRequest();
     }
@@ -58,12 +59,12 @@ function attachmentTokenCallback(asyncResult, userContext) {
 }
 
 function makeServiceRequest() {
+    showToast("makeServiceRequest()");
     var attachment;
     xhr = new XMLHttpRequest();
-showToast(">>Before localhost");
+    showToast("new XMLHttpRequest()");
     // Update the URL to point to your service location.
     xhr.open("POST", "https://localhost:44320/api/AttachmentService", true);
-showToast(">>Pass localhost");
     xhr.setRequestHeader("Content-Type", "application/json; charset=utf-8");
     xhr.onreadystatechange = requestReadyStateChange;
 
